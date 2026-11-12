@@ -7,9 +7,14 @@ cask "notchi" do
   desc "Free, open-source notch island and theme suite"
   homepage "https://notchi-plum.vercel.app"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   # Notchi updates itself (Sparkle), so brew doesn't need to.
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Notchi.app"
   binary "#{appdir}/Notchi.app/Contents/Helpers/notchi"
