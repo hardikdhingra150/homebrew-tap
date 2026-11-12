@@ -9,6 +9,7 @@ cask "notchi" do
 
   livecheck do
     url :url
+    regex(/^v?(\d+(?:\.\d+)+(?:-[a-z]+\.\d+)?)$/i)
     strategy :github_latest
   end
 
